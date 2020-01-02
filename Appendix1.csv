@@ -1,0 +1,49 @@
+Champion,Class1,Class2,Class3,GoldCost,Health, Armor , Magic resist ,Vison range,Attack range,AttackDamage,Movement speed, Critical strike chance , Critical strike damage ,Mana Start,Mana Cost,Ability,0
+Aatrox,Demon,BladeMaster,null,3,750,0.4,0.4,20,10,50,10,0.25,1.5,5,10,Damage All Enemies in range of 25 by 250,1
+Ahri,Wild,Sorcerer,Assassin,3,400,0.3,0.3,20,10,30,10,0.25,1.5,5,10,Damage All Enemies behind the target by 100 Magic + 100 True,2
+Akali,Ninja,Assassin,Imperial,6,350,0.25,0.25,20,10,30,10,0.25,1.5,2,4,Deals 10% of enemy max health,3
+Anivia,Glacial,Elementalist,Sorcerer,6,500,0.5,0.5,20,10,20,10,0.25,1.5,5,10,Damage All Enemies in range of 30 by 250 and stune the target,4
+Ashe,Glacial,Ranger,null,1,350,0.1,0.1,60,30,25,5,0.25,2,5,10,10% movement speed + deals 200 Damage to the enemy and stun it for two rounds,5
+Brand,Demon,Sorcerer,null,4,400,0.3,0.3,20,10,25,10,0.25,1.5,5,10,Damage up to 3 enemies by 10% of their max health and reduce their armor and magic resist by 10%,6
+Chogath,Void,Brawler,null,1,600,0.6,0.3,25,15,35,10,0.25,1.5,5,10,Deals 150 True damage,7
+Darius,Imperial,Knight,Brawler,5,600,0.5,0.5,20,10,50,10,0.25,1.5,5,10,Deals 75 True damage for all enemies in  range of 20 and heals for the same amount,8
+Draven,Imperial,BladeMaster,Ranger,6,400,0.4,0.4,20,10,35,10,0.25,1.5,5,10,Deals 30% of enemy max health as true damage,9
+Evelynn,Demon,Assassin,null,3,500,0.25,0.25,20,10,20,10,0.25,1.5,5,8,Instant kill the enemy if its health less than 40% and travel back 20 squares,10
+Fiora,Noble,BladeMaster,,1,500,0.4,0.4,20,10,45,10,0.25,1.5,5,10,Block all damage this round and stun the enemy,11
+Gankplank,Pirate,BladeMaster,Gunslinger,4,200,0.4,0.4,20,10,50,10,0.25,1.5,5,10,gains double range and double damage this round,12
+Garen,Noble,Knight,Brawler,5,600,0.5,0.5,20,10,50,10,0.25,1.5,5,10,deals same amount of enemy missig health,13
+Gnar,Wild,Yordle,Shapeshifter,4,450,0.3,0.3,20,10,45,10,0.25,1.5,5,10,Damage All Enemies behind the target by 100 Magic,14
+Graves,Imperial,Gunslinger,Pirate,4,200,0.2,0.2,60,30,30,5,0.25,2,5,10,Deals 300 damage and makes the enemy citical strike chance 0,15
+Karthus,Void,Sorcerer,null,4,450,0.3,0.3,20,10,50,10,0.25,1.5,5,10,deals 250 to all enemies,16
+Kassadin,Void,Sorcerer,null,2,550,0.3,0.3,20,10,50,10,0.25,1.5,0,0,deals 20 Extra damage and steals 2 mana,17
+Katarina,Imperial,Assassin,null,2,450,0.25,0.25,20,10,50,10,0.25,1.5,2,8,Burns target's mana and prevent it from getting mana,18
+Kayle,Noble,Knight,Ranger,8,550,0.5,0.5,20,10,50,10,0.25,1.5,5,10,Block all damage on Kayle and two random alies,19
+Kennen,Ninja,Yordle,Elementalist,5,350,0.5,0.5,20,10,60,10,0.25,1.5,5,10,Deals 350% basic attack damage,20
+Kindred,Void,Ranger,null,2,350,0.1,0.1,60,30,50,5,0.25,2,5,10,All Alies gain 10% extra damage,21
+Leona,Noble,BladeMaster,Brawler,2,500,0.4,0.4,20,10,50,10,0.25,1.5,5,10,Stun to enemies,22
+Lissandra,Glacial,Elementalist,Sorcerer,6,800,0.5,0.5,20,10,50,10,0.25,1.5,5,10,Deals 550 Damage to the enemy and 1 enemy near to it,23
+Lucian,Noble,Gunslinger,null,1,450,0.2,0.2,60,30,50,5,0.25,2,5,10,Gains 10 Extra range and 10 extra movement speed,24
+Lulu,Yordle,Elementalist,null,2,350,0.5,0.5,20,10,50,10,0.25,1.5,5,10,Heals itself and 2 alies by 150,25
+MissFortune,Pirate,Gunslinger,null,1,200,0.2,0.2,60,30,50,5,0.25,2,5,10,Deals 100 Damage and steals 10% of its attack damage,26
+Mordekaiser,Void,Knight,null,1,550,0.5,0.5,20,10,50,10,0.25,1.5,5,10,Deals 150 Damage and reduce its magic resist 10%,27
+Morgana,Demon,Sorcerer,null,3,500,0.3,0.3,20,10,50,10,0.25,1.5,5,10,Deals 100 Damage to all enemies in 25 range and and steals 2 mana form each one,28
+Nidale,Wild,Shapeshifter,null,1,500,0.45,0.45,20,10,50,10,0.25,1.5,5,10,gain 10% extra damage and heals 1 ally by 100,29
+Poppy,Yordle,Knight,Brawler,6,650,0.5,0.5,20,10,50,10,0.25,1.5,5,10,stun all enemies in a line for two rounds,30
+Pyke,Pirate,Assassin,null,2,200,0.25,0.25,20,10,50,10,0.25,1.5,5,7,move up to 50 squares and damage all enemies in his path,31
+Ranger,Wild,Assassin,null,2,500,0.25,0.25,20,10,50,10,0.25,1.5,5,7,leap on the furthest enemy and deal 250 Damage,32
+Sejuani,Glacial,Knight,null,2,550,0.5,0.5,20,10,50,10,0.25,1.5,5,10,after two rounds prevent all enemies from casting the ability,33
+Shen,Ninja,BladeMaster,null,4,650,0.4,0.4,20,10,50,10,0.25,1.5,5,10,make himself and all alies in 20 squares immue from basic attack,34
+Shyvana,Dragon,Knight,Brawler,6,650,0.5,0.5,20,10,50,10,0.25,1.5,5,10,gain 10% extra health and increase range by 5 squares,35
+Sol,Dragon,Elementalist,null,3,400,0.5,0.5,20,10,50,10,0.25,1.5,5,10,Deals 100 Damage to all enemies in 25 range and pushs them 30 square away from him,36
+Swain,Demon,Shapeshifter,Imperial,6,600,0.45,0.45,20,10,50,10,0.25,1.5,2,10,Deals 50 Damage and heal himself for the same aomunt for all enemies in 15 square range for 3 rounds,37
+Talon,Ninja,BladeMaster,Assassin,6,500,0.4,0.4,20,10,50,10,0.25,1.5,5,10,Gains 100% critical strike chance for the next 4 rounds,38
+Tristana,Yordle,Gunslinger,null,1,450,0.2,0.2,60,30,50,5,0.25,2,5,10,after 3 rounds the enemy will take 350 damage,39
+Varus,Demon,Ranger,null,2,500,0.1,0.1,60,30,50,5,0.25,2,5,10,Gains 400% critical strike Damage for the next 4 rounds,40
+Vayne,Noble,Ranger,null,1,300,0.1,0.1,60,30,50,5,0.25,2,0,3,deals 15% of the enemy max health as true damage,41
+Veiger,Yordle,Sorcerer,null,3,300,0.3,0.3,20,10,50,10,0.25,1.5,0,7,instant kill the enemy,42
+Volibear,Glacial,Brawler,null,1,650,0.3,0.3,25,15,50,10,0.25,1.5,5,10,Deals 50% of the basic attack damage to two other enemies,43
+Warwick,Wild,Brawler,null,1,500,0.3,0.3,25,15,50,10,0.25,1.5,5,10,Deals 10% of enemy max health and heal for the same amount,44
+Yasuo,BladeMaster,Assassin,null,4,500,0.25,0.25,20,10,50,10,0.25,1.5,5,7.5,Deals 150 Damage and stun all enemies behind the target for two rounds,45
+Zed,Ninja,Assassin,BladeMaster,4,350,0.25,0.25,20,10,50,10,0.25,1.5,5,7.5,Make a copy of himself on the opposite side of the map mimic his attacks,46
+Azir,Dragon,Sorcerer,Ranger,6,400,0.25,0.25,60,30,50,10,0.25,1.5,2,10,Make two copies of himself on the opposite side of the map mimic his attacks,47
+Khazix,Void,Assassin,,2,400,0.25,0.25,20,10,50,10,0.25,1.5,5,7,If the target is away by 20 squares at least to its nearest ally it will die instantly ,48
