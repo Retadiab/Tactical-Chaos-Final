@@ -42,8 +42,8 @@ public class BuyMove extends Move {
     }
 
     public ArrayList<Champion> doBuyingForAutoPlayer(int championsNumber ){
-        System.out.println(consoleGame.ConsoleColors.GREEN_BOLD+"1"+ consoleGame.ConsoleColors.RESET);
-        System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"Buying move is running now >>>"+ consoleGame.ConsoleColors.RESET);
+//        System.out.println(consoleGame.ConsoleColors.GREEN_BOLD+"1"+ consoleGame.ConsoleColors.RESET);
+//        System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"Buying move is running now >>>"+ consoleGame.ConsoleColors.RESET);
         BuyMove buying = new BuyMove();
         ArrayList<Champion> CurrentChampions =new ArrayList<Champion>();
         ArrayList<Integer> choices = new ArrayList<Integer>();

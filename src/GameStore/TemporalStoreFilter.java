@@ -137,15 +137,14 @@ public class TemporalStoreFilter extends StoreFilter {
 
 
 //            System.out.println(championsForTempStore);
-        for(int i1=0 ; i1<championsNumber ;i1++){
+        for(int i1=0 ; i1<championsNumber ;i1++) {
             championsForTempStore1.add(getRandomChestItem(championsForTempStore));
             IndexesToDelete.add(this.IndexToDelete);
 
-            System.out.print(consoleGame.ConsoleColors.YELLOW+(i1+1)+"||\t"+ consoleGame.ConsoleColors.RESET);
-            System.out.println(championsForTempStore1.get(i1));
-            System.out.println(consoleGame.ConsoleColors.YELLOW+"==========================================================================================================================================================================="+ consoleGame.ConsoleColors.RESET);
+//            System.out.print(consoleGame.ConsoleColors.YELLOW+(i1+1)+"||\t"+ consoleGame.ConsoleColors.RESET);
+//            System.out.println(championsForTempStore1.get(i1));
+//            System.out.println(consoleGame.ConsoleColors.YELLOW+"==========================================================================================================================================================================="+ consoleGame.ConsoleColors.RESET);
         }
-
 
 
         int counter=0;
@@ -157,23 +156,23 @@ public class TemporalStoreFilter extends StoreFilter {
 //        while(counter < 3 ) {
 
             for(int i=0 ; i<2 ;i++){
-                System.out.println("Please Enter Your choice  :  -------IF YOU DON'T WANT TO ADD MORE CHAMPIONS PRESS ***0***------ ");
+//                System.out.println("Please Enter Your choice  :  -------IF YOU DON'T WANT TO ADD MORE CHAMPIONS PRESS ***0***------ ");
 
                 pickedChampion = PickedChampion.get(i);
                 if(pickedChampion == 0 ){
                     PickedChampion.remove(i);
                     break;
                 }
-                System.out.println(consoleGame.ConsoleColors.GREEN+pickedChampion+ consoleGame.ConsoleColors.RESET);
+//                System.out.println(consoleGame.ConsoleColors.GREEN+pickedChampion+ consoleGame.ConsoleColors.RESET);
                 championChoices.add(pickedChampion);
-                System.out.println("Your champion Has been Added successfully! ");
+//                System.out.println("Your champion Has been Added successfully! ");
 
                 int x =IndexesToDelete.get(pickedChampion-1);
                 championsForTempStore.remove(x);
 
     }
 //        System.out.println("Please Enter Your choice  :  -------IF YOU DON'T WANT TO ADD MORE CHAMPIONS PRESS ***0***------ ");
-        System.out.println(consoleGame.ConsoleColors.GREEN+"0"+ consoleGame.ConsoleColors.RESET);
+//        System.out.println(consoleGame.ConsoleColors.GREEN+"0"+ consoleGame.ConsoleColors.RESET);
 
         return PickedChampion;
 

@@ -4,8 +4,7 @@ import Champion.Champion;
 
 import java.util.ArrayList;
 
-public  class AutoPlayer extends Player {
-
+public class AutoPlayer extends Player {
 
 
     ArrayList<Champion> currentChampions = new ArrayList<Champion>();
@@ -23,7 +22,6 @@ public  class AutoPlayer extends Player {
     public ArrayList<Champion> getBenchChampions() {
         return playerBench.getBenchChampions();
     }
-
 
 
     public ArrayList<Champion> setBenchChampions(ArrayList<Champion> benchChampions) {

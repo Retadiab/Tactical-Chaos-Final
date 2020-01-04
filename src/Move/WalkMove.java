@@ -15,12 +15,14 @@ public class WalkMove extends Move {
         4move right
          */
         boolean done =false ;
-        System.out.println("the last cood "+champion.x+" - "+ champion.y );
+        System.out.println("the last cood FOT PLAYER   "+champion.playerId+" - " +champion.x+" - "+ champion.y );
         arena.getSquare(champion.x,champion.y).getChampionsIn().remove(champion);
 
         switch (id ) {
             case (1) :{
                 done = MoveUp(champion , arena,p1,players);
+                System.out.println("the new cood FOT PLAYER   "+champion.playerId+" - " +champion.x+" - "+ champion.y );
+
                 arena.printArena(p1);
                 break;
 
@@ -29,6 +31,7 @@ public class WalkMove extends Move {
                 {
                 done = MoveDown(champion , arena,p1,players);
                     arena.printArena(p1);
+                    System.out.println("the new cood FOT PLAYER   "+champion.playerId+" - " +champion.x+" - "+ champion.y );
 
                     break;
                 }
@@ -37,6 +40,7 @@ public class WalkMove extends Move {
                 {
                done= MoveLeft(champion, arena, p1, players);
                     arena.printArena(p1);
+                    System.out.println("the new cood FOT PLAYER   "+champion.playerId+" - " +champion.x+" - "+ champion.y );
 
                     break;
                 }
@@ -46,6 +50,7 @@ public class WalkMove extends Move {
                 {
                 done=MoveRight(champion, arena, p1, players);
                     arena.printArena(p1);
+                    System.out.println("the new cood FOT PLAYER   "+champion.playerId+" - " +champion.x+" - "+ champion.y );
 
                     break;
                 }
@@ -57,6 +62,9 @@ public class WalkMove extends Move {
 
 return done;
     }
+
+
+
     public boolean MoveDown(Champion champion , Arena arena, Player p1 , ArrayList<Player> players ) {
         champion.x = champion.x + ( (int) champion.MovementSpeed-3) ;
 

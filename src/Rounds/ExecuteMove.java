@@ -354,7 +354,7 @@ ArrayList<String> plan = new ArrayList<String>();
                      }
 
                 case "B": {
-                    System.out.println("Ability move must be runing right now ");
+//                    System.out.println("Ability move must be runing right now ");
 
                     String parametersB = new String();
 
@@ -415,6 +415,181 @@ ArrayList<String> plan = new ArrayList<String>();
 
 
 
+    public boolean executeMoveForAutoPlayer (String plan  , Arena arena , Player p1 , ArrayList<Player> players,int wayOfPlaying){
+
+
+        boolean done = false;
+
+//      System.out.println("plan size" + plan.size());
+//        for(int i =0 ; i <plan.size(); i++){
+//
+//            String move = new String();
+//            move = plan.get(i).substring(0,1);
+        String move = new String();
+        move = plan.substring(0,1);
+        switch (move){
+
+            case "T":{
+
+                done = true;
+
+            }
+            case "W":{
+
+                boolean championIsHere = false;
+
+                String parameters = new String();
+//                    parameters =plan.get(i);
+                parameters =plan;
+                Champion championForTheMove =new Champion();
+
+                parameters.substring(1,3);
+                for(Champion c : p1.getArenaChampions()){
+                    if(c.getChampionName() != null && c.getChampionName().substring(0,3).contains(parameters.substring(1,4)))
+                    {
+                        championForTheMove = c;
+                        championIsHere=true;
+                    }
+
+                }
+
+                if(!championIsHere){
+
+                }
+                WalkMove move1 = new WalkMove();
+
+                done=move1.PerformMove(championForTheMove , Integer.parseInt(parameters.substring(4,5)) , arena,p1,players);
+                break;
+            }
+
+            case "A":
+
+            {
+
+
+
+                System.out.println("Attack move must be runing right now ");
+
+                String parametersA = new String();
+
+                boolean championIsHere = false;
+                boolean championIsHere1 = false;
+                Champion Attacker =new Champion();
+                Champion Target =new Champion();
+
+//                        parametersA =plan.get(i);
+                parametersA =plan;
+
+                parametersA.substring(1,4);
+
+
+
+                for(Champion c : p1.getArenaChampions()){
+                    if(c.getChampionName() != null && c.getChampionName().substring(0,3).equals(parametersA.substring(1,4)))
+                    {
+                        Attacker=c;
+                        championIsHere1 =true;
+
+                    }
+
+                }
+                if(!championIsHere1){
+
+                    System.err.println("Something went wrong maybe your attacker champion got killed !!! :( ");
+                }
+
+                System.out.println("champions on arena " +arena.getAllChampionsOnArena());
+
+                for(Champion c : arena.getAllChampionsOnArena()){
+                    if(c.getChampionName() != null && c.getChampionName().substring(0,3).equals(parametersA.substring(4,7)))
+                    {
+                        Target=c;
+                        championIsHere =true;
+                    }
+                }
+                if(!championIsHere){
+
+                    System.err.println("Something went Wrong maybe your Target is already dead!!! :( ");
+
+                    done =true;
+                    break;
+                }
+                else {
+
+                    BasicAttackMove move2 = new BasicAttackMove();
+                    boolean n = false;
+                    n = move2.PerformMove(Attacker, Target);
+                    if (!n) {
+
+                        System.err.println("Sorry your Attack got canceled :( !!! ");
+                    }
+                }
+                done =true;
+                break;
+
+
+
+            }
+
+            case "B": {
+//                    System.out.println("Ability move must be runing right now ");
+
+                String parametersB = new String();
+
+                boolean championIsHere = false;
+
+                Champion championToUseAbility =new Champion();
+
+//                    parametersB =plan.get(i);
+                parametersB =plan;
+                parametersB.substring(1,4);
+                for(Champion c : p1.getArenaChampions()){
+                    if(c.getChampionName() != null && c.getChampionName().substring(0,3).contains(parametersB.substring(1,4)))
+                    {
+                        championToUseAbility=c;
+                        championIsHere=true;
+                    }
+                }
+                if(!championIsHere){
+                    System.err.println("Your champion is dead you can not use his/her ability anymore !!! ");
+                    done = true;
+                    break;
+                }
+                else {
+                    MoveFactory moveAbility =new MoveFactory();
+                    moveAbility.createAbilityMove(championToUseAbility,arena,p1,players);
+
+
+                }
+                done = true;
+                break;
+
+            }
+            case "P":{
+                done = true;
+
+                break;
+
+            }
+
+            case "R":{
+                done = true;
+                break;
+
+            }
+            case "N":{
+                done=true;
+                break;
+            }
+
+
+
+        }
+
+
+        return done;
+
+    }
 
 
 

@@ -93,26 +93,6 @@ public class Planning extends Round{
 
     }
 
-//    public int printPlanningListPhase2ShoppingList(){
-//
-//        System.out.println("Welcome to phase 2, please choose your plan: ");
-//
-//        System.out.println("1- Sell champions.");
-//        System.out.println("2- Buy champions.");
-//        System.out.println("3- Walk move.");
-//        System.out.println("4- Attack a champion.");
-//        System.out.println("5- Use ability for specific champion.");
-//        System.out.println("6- Place champion.");
-//        System.out.println("7- Swap");
-//        System.out.println("Your choice is: ");
-//
-//
-//        int userChoice= x.nextInt();
-//        return userChoice;
-//
-//
-//
-//    }
 
 
     public boolean levelup(Champion c, Player p)
@@ -326,7 +306,7 @@ boolean isRound = false;
                     yCoor = yCoorScanner.nextInt();
 
                     //@TODO CHECK EXCEPTIONS HANDLING
-                    IllegalSquare.showErrorForConsole(championsToGetIndex.size());
+//                    IllegalSquare.showErrorForConsole(championsToGetIndex.size());
 
 
                     PlaceMove move2  = new PlaceMove();
@@ -404,6 +384,68 @@ boolean isRound = false;
 //        arena.printArena();
 return isRound;
     }
+
+
+   public  boolean AutoPlayerChoicesForPhase1( Player p, Arena arena, ArrayList<Player> indexOfPlayerToPrintItWithArena){
+//        System.out.println(" PLAYER INDEX :: " + p.getPlayerIndex());
+     //doing planning move for 3 times after each other
+        for(int i =0 ; i<4;i++){
+//            System.out.println(consoleGame.ConsoleColors.PURPLE_UNDERLINED+"Phase 1 is running, please choose your movement: "+ consoleGame.ConsoleColors.RESET);
+//            System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"1-"+ consoleGame.ConsoleColors.RESET +" Buy champions.");
+//            System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"2-"+ consoleGame.ConsoleColors.RESET +"Place your champions.");
+
+            ArrayList<Champion> addedChampions = new ArrayList<Champion>();
+            BuyMove move1 = new BuyMove();
+            addedChampions = move1.doBuyingForAutoPlayer(5);
+            p.getCurrentChampions().addAll(addedChampions);
+            p.getBenchChampions().addAll(addedChampions);
+            for(Champion c1 : addedChampions){
+
+                c1.setPlayerId(p.getPlayerIndex());
+//                System.err.println("champions with player id : "+c1.getPlayerId());
+
+
+            }
+
+            PlaceMove move2  = new PlaceMove();
+            int xCoor = getRandom(0,13);
+            int yCoor = getRandom(0,54);
+//            System.out.println("x"+xCoor);
+//            System.out.println("y:"+yCoor);
+//
+
+            boolean placeMove;
+            placeMove = move2.placeMove(xCoor,yCoor,p.getBenchChampions().get(0),arena,indexOfPlayerToPrintItWithArena,p);
+            if(placeMove){
+                Champion championToDeleteFromBench = new Champion();
+                championToDeleteFromBench =  p.getBenchChampions().get(0);
+                p.getBenchChampions().remove(championToDeleteFromBench);
+                p.setArenaChampions(championToDeleteFromBench);
+//                       arena.printArena(p);
+
+            }
+
+
+        }
+
+//       System.out.println(consoleGame.ConsoleColors.PURPLE_UNDERLINED+"Phase 1 is running, please choose your movement: "+ consoleGame.ConsoleColors.RESET);
+//       System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"1-"+ consoleGame.ConsoleColors.RESET +" Buy champions.");
+//       System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"2-"+ consoleGame.ConsoleColors.RESET +"Place your champions.");
+//
+//       ArrayList<Champion> addedChampions = new ArrayList<Champion>();
+//       BuyMove move1 = new BuyMove();
+//       addedChampions = move1.doBuyingForAutoPlayer(5);
+//       p.getCurrentChampions().addAll(addedChampions);
+//       p.getBenchChampions().addAll(addedChampions);
+//       for(Champion c1 : addedChampions){
+//
+//           c1.setPlayerId(p.getPlayerIndex());
+////                System.err.println("champions with player id : "+c1.getPlayerId());
+//
+//
+//       }
+        return true;
+            }
 
     public     String  getChampionChoiceFromPhase2(int userChoice , Player player, Arena arena , ArrayList<Player> playersOfTheGame,Champion c,int wayOfPlanning){
         boolean isRound = false;
@@ -539,70 +581,106 @@ return isRound;
 
 
         }
-return moveAsString;
+        return moveAsString;
     }
 
-   public  boolean AutoPlayerChoicesForPhase1( Player p, Arena arena, ArrayList<Player> indexOfPlayerToPrintItWithArena){
 
-     //doing planning move for 3 times after each other
-        for(int i =0 ; i<4;i++){
-            System.out.println(consoleGame.ConsoleColors.PURPLE_UNDERLINED+"Phase 1 is running, please choose your movement: "+ consoleGame.ConsoleColors.RESET);
-            System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"1-"+ consoleGame.ConsoleColors.RESET +" Buy champions.");
-            System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"2-"+ consoleGame.ConsoleColors.RESET +"Place your champions.");
+  //TODO make the execute move for auto player
 
-            ArrayList<Champion> addedChampions = new ArrayList<Champion>();
-            BuyMove move1 = new BuyMove();
-            addedChampions = move1.doBuyingForAutoPlayer(5);
-            p.getCurrentChampions().addAll(addedChampions);
-            p.getBenchChampions().addAll(addedChampions);
-            for(Champion c1 : addedChampions){
+    public     String AutoPlayerChampionChoiceFromPhase2(int userChoice , Player player, Arena arena , ArrayList<Player> playersOfTheGame,Champion c,int wayOfPlanning){
+        boolean isRound = false;
+        String moveAsString =new String();
 
-                c1.setPlayerId(p.getPlayerIndex());
-//                System.err.println("champions with player id : "+c1.getPlayerId());
+
+        switch (userChoice) {
+            case (1): {
+
+                moveAsString = moveAsString+"N";
+                ExecuteMove executeMove = new ExecuteMove();
+                executeMove.executeMoveForAutoPlayer(moveAsString, arena,player , playersOfTheGame, wayOfPlanning);
+                break;
+            }
+
+            case (2): {
+
+                moveAsString = moveAsString+"W";
+
+                String s =new String();
+                s =c.championName.substring(0,3);
+                int id = getRandom(1,4);
+
+                System.err.println("the move is "+ id + "for champion " +c+"player "+ c.playerId);
+
+
+                String idString= String.valueOf(id);
+                moveAsString = moveAsString+s+idString;
+                ExecuteMove executeMove = new ExecuteMove();
+                executeMove.executeMoveForAutoPlayer(moveAsString, arena,player , playersOfTheGame, wayOfPlanning);
+                break;
+            }
+            case (3): {
+
+                moveAsString = moveAsString+"A";
+                ArrayList<Champion> championGetsAttack = new ArrayList<Champion>();
+                String championAsString = new String();
+                championAsString= c.championName.substring(0,3);
+                moveAsString = moveAsString+championAsString;
+
+
+
+
+                BasicAttackMove move = new BasicAttackMove();
+                championGetsAttack = move.attackAccepted(c,arena,player);
+                if(championGetsAttack.size()!= 0) {
+                    int championToBeAttacked = 1;
+                    String championAsString2 = new String();
+                    championAsString2 = championGetsAttack.get(championToBeAttacked - 1).championName.substring(0, 3);
+                    moveAsString = moveAsString + championAsString2;
+                    ExecuteMove executeMove = new ExecuteMove();
+                    executeMove.executeMoveForAutoPlayer(moveAsString, arena,player , playersOfTheGame, wayOfPlanning);
+                }
+
+
+                else {
+                    moveAsString="N";
+                    break;
+                }
+                break;
 
 
             }
+            case (4):
+            {moveAsString = moveAsString+"B";
+                String useAbilityChampion = new String();
+                useAbilityChampion =c.championName.substring(0,3);
+                moveAsString = moveAsString+useAbilityChampion;
+                ExecuteMove executeMove = new ExecuteMove();
+                executeMove.executeMoveForAutoPlayer(moveAsString, arena,player , playersOfTheGame, wayOfPlanning);
+                break;
 
-            PlaceMove move2  = new PlaceMove();
-            int xCoor = getRandom(0,13);
-            int yCoor = getRandom(0,54);
-            System.out.println("x"+xCoor);
-            System.out.println("y:"+yCoor);
 
 
-            boolean placeMove;
-            placeMove = move2.placeMove(xCoor,yCoor,p.getBenchChampions().get(0),arena,indexOfPlayerToPrintItWithArena,p);
-            if(placeMove){
-                Champion championToDeleteFromBench = new Champion();
-                championToDeleteFromBench =  p.getBenchChampions().get(0);
-                p.getBenchChampions().remove(championToDeleteFromBench);
-                p.setArenaChampions(championToDeleteFromBench);
-                       arena.printArena(p);
 
             }
+            case (5):{
+                moveAsString = moveAsString+"R";
+                //swap
+                break;
+            }
+            case (6):{
+
+                moveAsString = moveAsString+"N";
+                break;
+
+            }
+            default:
+                System.out.println("Please enter a right number");
+
 
 
         }
-
-//       System.out.println(consoleGame.ConsoleColors.PURPLE_UNDERLINED+"Phase 1 is running, please choose your movement: "+ consoleGame.ConsoleColors.RESET);
-//       System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"1-"+ consoleGame.ConsoleColors.RESET +" Buy champions.");
-//       System.out.println(consoleGame.ConsoleColors.CYAN_BOLD+"2-"+ consoleGame.ConsoleColors.RESET +"Place your champions.");
-//
-//       ArrayList<Champion> addedChampions = new ArrayList<Champion>();
-//       BuyMove move1 = new BuyMove();
-//       addedChampions = move1.doBuyingForAutoPlayer(5);
-//       p.getCurrentChampions().addAll(addedChampions);
-//       p.getBenchChampions().addAll(addedChampions);
-//       for(Champion c1 : addedChampions){
-//
-//           c1.setPlayerId(p.getPlayerIndex());
-////                System.err.println("champions with player id : "+c1.getPlayerId());
-//
-//
-//       }
-        return true;
-            }
-
+        return moveAsString;
+    }
 
     public static void main(String[] args) {
         Planning p= new Planning();

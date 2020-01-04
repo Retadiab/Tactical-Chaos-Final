@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 public abstract class Player {
     String name;
+    public Boolean isFinishedPhase1 = false;
+    public Boolean isFinishedPhase2 = false;
+
     Bench playerBench = new Bench();
     ArrayList<Champion> currentChampions = new ArrayList<Champion>();
     ArrayList<Champion> arenaChampions = new ArrayList<Champion>();

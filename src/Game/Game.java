@@ -19,7 +19,7 @@ public abstract class Game {
     static Scanner numberOfPlayers1 =new Scanner(System.in);
     static Scanner PlayerName =new Scanner(System.in);
     ArrayList<Player> players = new ArrayList<Player>();
-    public Arena arena ;
+    public static Arena arena ;
     public int turnNumber;
     public int numberOfPlayers3;
     public   Random r =new Random();

@@ -15,7 +15,7 @@ boolean donePlaced = false;
     public boolean placeMove(int x , int y , Champion p, Arena a , ArrayList<Player> players , Player playerForSquare){
 
 
-                System.out.println(x + " " + y);
+//                System.out.println(x + " " + y);
                 a.getSquare(x,y).setChampionsIn(p);
                 a.getSquare(x,y).setPlayersIn(playerForSquare);
 
@@ -42,7 +42,7 @@ boolean donePlaced = false;
     }
     public boolean placeMoveForWalkMove(int x , int y , Champion p, Arena a , ArrayList<Player> players , Player playerForSquare){
 
-        System.out.println(x + " " + y);
+//        System.out.println(x + " " + y);
         a.getSquare(x,y).setChampionsIn(p);
         a.getSquare(x,y).setPlayersIn(playerForSquare);
 
